@@ -29,7 +29,7 @@ const navlink = [
 
 const Navigation = () => {
   return (
-    <nav className="glassCard max-w-[1440px] w-full z-20 mt-10 px-6 py-4 sm:py-6 mx-4 sm:mx-16 grid grid-cols-2 lg:grid-cols-3 items-center">
+    <nav className="glassCard max-w-[1440px] w-full z-20 mt-4 md:mt-10 px-6 py-4 sm:py-6 mx-4 sm:mx-16 grid grid-cols-2 lg:grid-cols-3 items-center">
       {/* logo */}
       <a
         href={config.socials.website}
@@ -71,7 +71,7 @@ const Navigation = () => {
           <Link
             key={index}
             href={link.link}
-            className="text-white/40 capitalize hover:text-white"
+            className="text-white/40 capitalize hover:text-white text-sm 2xl:text-base text-nowrap"
           >
             {link.title}
           </Link>
