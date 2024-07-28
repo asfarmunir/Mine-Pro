@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { ConnectWallet } from "./connect-wallet";
@@ -7,27 +8,35 @@ import Link from "next/link";
 const navlink = [
   {
     title: "About",
-    link: "#about",
+    link: "about",
   },
   {
     title: "presale",
-    link: "#presale",
+    link: "presale",
   },
   {
     title: "How To Buy",
-    link: "#how-to-buy",
+    link: "how-to-buy",
   },
   {
     title: "roadmap",
-    link: "#roadmap",
+    link: "roadmap",
   },
   {
     title: "FAQ",
-    link: "#faq",
+    link: "faq",
   },
 ];
 
 const Navigation = () => {
+  const scrollToSection = (section: string) => {
+    const el = document.getElementById(section);
+    console.log(section);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="glassCard max-w-[1440px] w-full z-20 mt-4 md:mt-10 px-6 py-4 sm:py-6 mx-4 sm:mx-16 grid grid-cols-2 lg:grid-cols-3 items-center">
       {/* logo */}
@@ -68,13 +77,13 @@ const Navigation = () => {
           Telegram
         </a> */}
         {navlink.map((link, index) => (
-          <Link
+          <button
+            onClick={() => scrollToSection(link.link)}
             key={index}
-            href={link.link}
             className="text-white/40 capitalize hover:text-white text-sm 2xl:text-base text-nowrap"
           >
             {link.title}
-          </Link>
+          </button>
         ))}
       </div>
 

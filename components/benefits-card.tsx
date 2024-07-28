@@ -37,8 +37,10 @@ const BenefitsCard: React.FC<Props> = ({ image, title, description }) => {
         </div>
       </div>
 
-      <h2 className="grayTextGradient text-[25px]">{title}</h2>
-      <p className="mt-3 text-white/60 text-[16px]">{description}</p>
+      <h2 className="grayTextGradient text-[20px] 2xl:text-[25px]">{title}</h2>
+      <p className="mt-3 text-white/60 text-[13px] 2xl:text-[16px]">
+        {description}
+      </p>
     </div>
   );
 };

@@ -36,17 +36,17 @@ export default function Home() {
         <div className="heroSectionBG"></div> {/* top radial gradient */}
         <div className="heroSectionBG2"></div> {/* grid lines */}
         {/* content container */}
-        <div className="flex flex-col lg:flex-row justify-center  md:gap-12 lg:gap-20 items-center">
+        <div className="flex flex-col lg:flex-row justify-center px-12 md:gap-6 2xl:gap-20 items-center">
           {/* lefthand content - logo, title, description */}
           <div className="ml-4 mr-4 lg:ml-4 xl:ml-8 lg:mr-0 mb-8 ">
             <MineProTag />
             <div className="mt-4">
               <h1
-                className={`grayTextGradient max-w-xl lg:max-w-[700px] text-[32px] sm:text-[48px] lg:text-[64px] xl:text-[80px]`}
+                className={`grayTextGradient max-w-xl lg:max-w-[700px] text-[32px] sm:text-[48px] lg:text-[64px] 2xl:text-[80px]`}
               >
                 Tokenized Bitcoin Mining For The People
               </h1>
-              <p className="mt-5 max-w-[560px] text-white/60 text-[16px] sm:text-[18px] lg:text-[20px]">
+              <p className="mt-5 max-w-[560px] text-white/60 text-[16px] sm:text-[18px] 2xl:text-[20px]">
                 MinePro is an innovative tokenized Bitcoin mining project which
                 pays investors 10-20% monthly profit in Bitcoin just for staking
                 our native token, $MINE.
@@ -74,7 +74,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-8 lg:mt-16"
         >
-          <h2 className="mx-auto text-center creamTextGradient max-w-xl lg:max-w-[900px] text-[32px] sm:text-[48px] lg:text-[64px] xl:text-[80px]">
+          <h2 className="mx-auto text-center creamTextGradient max-w-xl lg:max-w-[900px] text-[32px] sm:text-[48px] lg:text-[64px] 2xl:text-[80px]">
             Benefits of Tokenizing Bitcoin Mining
           </h2>
         </MotionDiv>
@@ -194,7 +194,7 @@ export default function Home() {
       {/* mining perfected info section */}
       <section
         id="presale"
-        className="max-w-[1440px] mx-auto flex flex-col items-center md:flex-row md:justify-around mt-16 mb-24 sm:my-24 lg:my-[20px] px-8"
+        className="max-w-[1440px] mx-auto flex flex-col items-center md:flex-row md:justify-center mt-16 mb-24 sm:my-24 lg:my-[20px] px-16 2xl:px-8"
       >
         {/* left col - content */}
         <div>
@@ -205,7 +205,7 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h2 className="mt-10 grayTextGradient max-w-xl lg:max-w-[700px] text-[32px] sm:text-[48px] lg:text-[64px] xl:text-[80px]">
+            <h2 className="mt-10 grayTextGradient max-w-xl lg:max-w-[700px] text-[32px] sm:text-[48px] lg:text-[64px] 2xl:text-[80px]">
               Bitcoin Mining Perfected
             </h2>
           </MotionDiv>
@@ -215,7 +215,7 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <p className="mt-6 max-w-[560px] text-white/60 text-[16px]">
+            <p className="mt-6 max-w-[560px] text-white/60 text-[13px] xl:text-[16px]">
               When it comes to Bitcoin mining the bottom line Is POWER. Low
               power cost = Higher Profit. That's why the team at MinePro has
               secured an incredible partnership with private enterprise energy
@@ -230,7 +230,7 @@ export default function Home() {
         </div>
 
         {/* right col - image */}
-        <div className="w-full md:w-2/3 h-[95%]  min-h-[350px] md:min-h-[800px] relative">
+        <div className="w-full md:w-1/2 2xl:w-2/3 h-[95%]  min-h-[350px] md:min-h-[800px] relative">
           <Image
             src="/ASIC_Miningtool.png"
             alt="Mining Perfected"
@@ -254,7 +254,7 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h2 className="mt-10 creamTextGradient max-w-xl lg:max-w-[700px] text-[32px] sm:text-[48px] lg:text-[64px] xl:text-[80px] text-center">
+            <h2 className="mt-10 creamTextGradient max-w-xl lg:max-w-[700px] text-[32px] sm:text-[48px] lg:text-[64px] 2xl:text-[80px] text-center">
               Check out Dylan's trip to our Alberta facility
             </h2>
           </MotionDiv>
@@ -397,6 +397,7 @@ export default function Home() {
         <h2 className="mt-10 grayTextGradient max-w-xl lg:max-w-[700px] text-[36px] sm:text-[48px] lg:text-[64px] xl:text-[80px] text-center">
           Roadmap
         </h2>
+
         <Roadmap />
       </section>
       {/* FAQ section */}

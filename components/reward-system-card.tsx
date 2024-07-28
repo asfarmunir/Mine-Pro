@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import AnimatedCircleProgress from "@/components/AnimatedCirclesProgress";
 
 interface RewardItemSelection {
   image: string;
@@ -21,14 +22,14 @@ const rewardItems: RewardItemSelection[] = [
   },
   {
     image: "/reward-system/5.png",
-    percentage: 5,
+    percentage: 15,
     title: "goes to ongoing marketing.",
     description:
       "This is to ensure $MINE has steady buy pressure over any market conditions.",
   },
   {
     image: "/reward-system/5.png",
-    percentage: 5,
+    percentage: 16,
     title: "goes to the team.",
     description: "This is used for ongoing development.",
   },
@@ -42,19 +43,16 @@ export const RewardSystemCard = () => {
   return (
     <div className="mt-20 rewardSystemCard w-full sm:pt-[72px] px-6 pb-6">
       {/* image and percentage */}
-      <div className="relative">
-        <div className="w-full h-[160px] xs:h-[200px] sm:h-[240px]  relative z-[0] -bottom-4 sm:-bottom-1">
-          <Image
-            src={selectedItem.image}
-            alt="reward amount image"
-            objectFit="contain"
-            fill
-          />
-        </div>
+      <div className=" hidden md:block relative">
+        <AnimatedCircleProgress progressPercentage={selectedItem.percentage} />
+
         <div className="absolute -bottom-2 w-full h-[40px] bg-gradient-to-t from-black to-transparent"></div>
         {/* percentage overlay */}
-        <h3 className="grayTextGradient text-[48px] sm:text-[64px] lg:text-[72px] text-center z-[2] absolute top-[120px] xs:top-[152px]  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          {selectedItem.percentage}%
+        <h3 className="grayTextGradient text-[48px] sm:text-[64px] lg:text-[72px] text-center z-[2] absolute top-[120px] xs:top-[120px]  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          {selectedItem.percentage === 16
+            ? selectedItem.percentage - 1
+            : selectedItem.percentage}
+          %
         </h3>
       </div>
 
@@ -78,7 +76,7 @@ export const RewardSystemCard = () => {
 
             {/* content */}
             <h4 className="orangeTextGradient text-[32px]">
-              {item.percentage}%
+              {item.percentage === 16 ? item.percentage - 1 : item.percentage}%
             </h4>
             <p className="mt-6 grayTextGradient text-[16px]">{item.title}</p>
             <p className="mt-3 text-white/60 text-[14px]">{item.description}</p>

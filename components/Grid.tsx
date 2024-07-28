@@ -1,4 +1,5 @@
 "use client";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "@emotion/styled";
 import {
   animate,
@@ -9,7 +10,6 @@ import {
   useTransform,
   useVelocity,
 } from "framer-motion";
-import { useEffect, useState } from "react";
 import Cell, { CELL_SIZE } from "./cell";
 
 const Container = styled(motion.div)<{
@@ -35,16 +35,18 @@ const Container = styled(motion.div)<{
 function Grid() {
   const [columns, setColumns] = useState(0);
   const [rows, setRows] = useState(0);
+  const [isMouseInside, setIsMouseInside] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   // mouse position
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   // mouse position from center
   const centerMouseX = useTransform<number, number>(mouseX, (newX) => {
-    return newX - window.innerWidth / 2;
+    return newX - window.innerWidth / 1.9;
   });
   const centerMouseY = useTransform<number, number>(mouseY, (newY) => {
-    return newY - window.innerHeight / 2;
+    return newY - window.innerHeight / 1.7;
   });
   // eased mouse position
   const mouseXEased = useMotionValue(0);
@@ -80,6 +82,7 @@ function Grid() {
   // handle mouse move on document
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
+      if (!isMouseInside) return;
       // animate mouse x and y
       animate(mouseX, e.clientX);
       animate(mouseY, e.clientY);
@@ -98,17 +101,28 @@ function Grid() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isMouseInside]);
+
+  const handleMouseEnter = () => {
+    setIsMouseInside(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMouseInside(false);
+  };
 
   const opacity = useTransform(mouseVelocity, [0, 1000], [0, 1]);
   const WebkitMaskPosition = useMotionTemplate`${centerMouseX}px ${centerMouseY}px`;
 
   return (
     <Container
+      ref={gridRef}
       columns={columns}
       style={{
         WebkitMaskPosition,
       }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {Array.from({ length: columns * rows }).map((_, i) => (
         <Cell key={i} mouseX={mouseX} mouseY={mouseY} />
