@@ -26,11 +26,7 @@ export default function Home() {
     <main className="overflow-hidden relative">
       {/* orb bg */}
       <div className="publicSaleSectionBG top-[220px] lg:top-[0px] -right-[300px] lg:right-0"></div>
-      {/* <div className=" absolute top-[320px] lg:top-[0px] z-50 -right-[300px] lg:right-0">
-        <video width="900" height="1200" loop controls>
-          <source src="Globe_Header_Animated.mp4" type="video/mp4" />
-        </video>
-      </div> */}
+
       {/* top section - hero text and presale card */}
       <section className="relative pt-20 lg:pt-0 pb-20">
         <div className="heroSectionBG"></div> {/* top radial gradient */}
@@ -147,7 +143,7 @@ export default function Home() {
               />
             </MotionDiv>
           </div>
-          <div className="flex md:hidden flex-col gap-10">
+          <div className="flex md:hidden flex-col gap-16">
             <div
 
             // viewport={{ once: true }}

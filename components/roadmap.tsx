@@ -101,15 +101,15 @@ export default function Roadmap() {
   return (
     <div className="w-full mt-8 sm:mt-12 sm:mb-32">
       {/* mobile ver */}
-      <div className="lg:hidden flex justify-center gap-12 mx-4 relative">
+      <div className="lg:hidden flex items-center justify-center gap-12 mx-4 relative">
         <div className="roadmapDotsMobile"></div>
         {/* left side - progress */}
 
         {/* right side - cards */}
-        <div className="flex flex-col items-center gap-12 px-4">
+        <div className="flex flex-col items-center justify-center gap-12 px-4">
           {roadmapItems.map((item, index) => (
             <div key={index} className="w-full lg:w-auto max-w-[600px]">
-              <h4 className="pl-4 creamTextGradient text-[24px]">
+              <h4 className=" creamTextGradient text-[24px]">
                 Q{item.number} 2024
               </h4>
               {/* card */}

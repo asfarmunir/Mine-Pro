@@ -72,7 +72,7 @@ const pngPartners: pngPartner[] = [
 
 const Partners = () => {
   return (
-    <div className="grid  max-w-[1240px]  grid-cols-3 md:grid-cols-4 xl:grid-cols-5 px-8 2xl:px-2   mx-auto ">
+    <div className="grid  max-w-[1240px] gap-3  grid-cols-3 md:grid-cols-4 xl:grid-cols-5 px-6 2xl:px-2   mx-auto ">
       {partners.map((partner, index) => (
         <div
           key={index}

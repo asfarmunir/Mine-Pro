@@ -52,11 +52,11 @@ const Navigation = () => {
 
       {/* links */}
       <div className="hidden lg:flex justify-self-center items-center gap-8 transition-all duration-200">
-        {/* <a
+        <a
           href="https://minepro-1.gitbook.io/minepro-documentation"
           target="_blank"
           rel="noreferrer"
-          className="text-white/40 hover:text-white"
+          className="text-white/40 capitalize hover:text-white text-xs 2xl:text-base text-nowrap"
         >
           Whitepaper
         </a>
@@ -64,23 +64,23 @@ const Navigation = () => {
           href="https://discord.gg/dWtWJjwNYy"
           target="_blank"
           rel="noreferrer"
-          className="text-white/40 hover:text-white"
+          className="text-white/40 capitalize hover:text-white text-xs 2xl:text-base text-nowrap"
         >
           Discord
-        </a> */}
-        {/* <a
+        </a>
+        <a
           href="https://t.me/MineProBitcoin"
           target="_blank"
           rel="noreferrer"
-          className="text-white/40 hover:text-white"
+          className="text-white/40 capitalize hover:text-white text-xs 2xl:text-base text-nowrap"
         >
           Telegram
-        </a> */}
+        </a>
         {navlink.map((link, index) => (
           <button
             onClick={() => scrollToSection(link.link)}
             key={index}
-            className="text-white/40 capitalize hover:text-white text-sm 2xl:text-base text-nowrap"
+            className="text-white/40 capitalize hover:text-white text-xs 2xl:text-base text-nowrap"
           >
             {link.title}
           </button>
